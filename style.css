@@ -1,0 +1,239 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+*
+{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+.animation-bg
+{
+    background: linear-gradient(-45deg , #ee7752,orange,#e73c7e,#23a6d5,#23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 1s ease infinite;
+ 
+}
+
+@keyframes gradient {
+    0%
+    {
+        background-position: 0% 50%;
+    }
+    50%
+    {
+        background-position: 100% 50%;
+    }
+    100%
+    {
+        background-position: 0% 50%;
+    }
+}
+
+body{
+    font-family:"Roboto", sans-serif;
+    width: 100%;
+    height: 100vh;
+    background: #8A2387;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom left, #E94057, #8A2387,#23a6d5);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom left, #E94057, #8A2387,#23a6d5);/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ 
+}
+.wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.wave svg {
+    position: relative;
+    display: block;
+    width: calc(129% + 1.3px);
+    height: 150px;
+}
+
+.wave .shape-fill {
+    fill: #FFFFFF;
+}
+.wrap
+{
+    width:35%;
+    background-color: white;
+    box-shadow: 0 5px 25px #0909094a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    z-index: 10000;
+}
+.timer
+{
+    padding:20px 30px;
+    width:80%;
+    display: flex;
+    align-items: center;
+    background-color:white;
+    justify-content: center;
+    flex-direction: column;
+}
+p
+{
+    font-size: 30px;
+    padding-bottom: 10px;
+    font-weight: bold;
+    background:linear-gradient(45deg ,#8A2387, #ee4485,#23a6d5);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+.fa-stopwatch
+{
+    color:#8A2387;
+}
+.out-circle
+{
+    width: 220px;
+    height:220px;
+    border-radius:50%;
+    background-color:#8A2387;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.in-circle
+{
+    width: 205px;
+    height:205px;
+    border-radius:50%;
+    background-color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #8A2387;
+    font-size: 28px;
+}
+.button
+{
+    margin-top: 20px;
+    width: 250px;
+    display: flex;
+    flex-direction:column;
+    font-size:15px;
+}
+.funbtn
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.toggle
+{
+    transition:all 0.3s ease;
+    border-radius: 50%;
+    padding: 12px;    
+    border: none;
+   background-color: #8A2387;
+   color: white;
+}
+.toggle .fa-pause , .pause .fa-play
+{
+    display: none;
+}
+.toggle.pause .fa-pause
+{
+    display: inline-block;
+}
+.fa-pause , .fa-play
+{
+    padding: 5px;
+}
+#laps,#reset
+{
+    padding: 12px 25px!important;
+    border-radius: 30px;
+    margin: 0 10px;
+    border: none;
+    color: white;
+    font-size: 15px;
+    background-color: #8A2387;
+    /* background:linear-gradient(45deg,#F27121,#e73c7e); */
+    box-shadow:0 8px 25px #bf5fc045, 0 8px 25px #0909094a;
+}
+#laps:active , #reset:active,.toggle:active,#clear:active
+{
+    transform: scale(0.95);
+}
+.clearall
+{
+    margin-top: 10px;
+    align-items: center;
+    display: flex;
+    width:100%;
+    justify-content: center;
+}
+#clear
+{
+    padding: 12px 0;
+    width: 100%;
+    font-size:15px;
+    border-radius: 30px;
+    border: none; 
+    color: white;
+    background: linear-gradient(45deg ,#8A2387, #ee4485);
+    box-shadow:0 8px 20px #bf5fc045, 0 8px 20px #0909094a;
+}
+.hidden 
+{
+    display: none;
+}
+.laps 
+{
+    /* display: flex; */
+    /* flex-direction: column-reverse; */
+    list-style: none;
+    width: 250px;
+    height:120px;
+    color: black;
+    position: relative;
+    padding-top:10px;
+    overflow: auto;
+    margin-top: 20px;
+}
+.laps::-webkit-scrollbar
+{
+    display: none;
+}
+.laps.off
+{
+    display: none;
+}
+.time
+{
+    display: inline-block;
+    padding: 0 20px;
+    font-weight: bold;
+    background:linear-gradient(45deg ,#8A2387, #ee4485);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+.count
+{
+    padding: 0 20px;
+    font-weight: bold;
+    color:#8A2387;
+}
+.lap-item
+{
+    display: inline-block;
+    text-align: center;
+    width:240px;
+    padding: 10px;
+    border: 1px solid #8A2387;
+    border-radius: 50px;
+    margin-bottom: 20px;
+}
